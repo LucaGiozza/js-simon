@@ -16,16 +16,22 @@ alert(' Attento! Tra poco verranno generati 5 numeri; quando pensi di averli mem
 alert(numeriRandom);
 
 
-var tempo = 3;
+var tempo = 30;
 
 var scadenza = setInterval(timer, 1000);
 
 function timer(){
     if(!tempo){
         clearInterval(scadenza);
-        alert('fine timer')
+        alert('fine timer, adesso tocca a te giocare! Scrivi i numeri che ti ricordi!')
         for(var i = 0; i < 5 ; i++){
             inserimento = parseInt(prompt('Ora inserisci, uno alla volta, tutti i numeri che ti ricordi'))
+                if(scopertaNumero(numeriRandom, inserimento)){
+                   alert('bravo hai indovinato almeno un numero')
+                    console.log('Numero indovinato')
+                }else{
+                    alert('no, questo numero non era presente in lista')
+                }
                 
        
                  }
@@ -45,11 +51,15 @@ function timer(){
      
 }
 
-// function risposta(){
-//     for(var i = 0; i < 5 ; i++){
-    
-       
-//     }
-// }
 
-// risposta()
+
+function scopertaNumero(array, numero){
+    for(var i = 0; i < array.length; i++){
+        if(array[i] == numero){
+            return true;
+        }
+
+    }
+    return false;
+}
+
