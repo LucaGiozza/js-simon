@@ -16,7 +16,7 @@ alert(' Attento! Tra poco verranno generati 5 numeri; quando pensi di averli mem
 alert(numeriRandom);
 
 
-var tempo = 30;
+var tempo = 3;
 
 var scadenza = setInterval(timer, 1000);
 
@@ -24,18 +24,32 @@ function timer(){
     if(!tempo){
         clearInterval(scadenza);
         alert('fine timer')
+        for(var i = 0; i < 5 ; i++){
+            inserimento = parseInt(prompt('Ora inserisci, uno alla volta, tutti i numeri che ti ricordi'))
+                
+       
+                 }
+             
+        
 
     }else{
         
         console.log(--tempo + 1) 
+        
        
     }
+        
+    
 
     
      
 }
 
-for(var i = 0; i < 5 ; i++){
+// function risposta(){
+//     for(var i = 0; i < 5 ; i++){
     
-    var inserimento = parseInt(prompt('Ora inserisci, uno alla volta, tutti i numeri che ti ricordi'))
-}
+       
+//     }
+// }
+
+// risposta()
